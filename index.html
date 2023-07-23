@@ -45,7 +45,7 @@
 
 		<!-- <a-sky id="sky1" scale="0.5 0.5 0.5" color="#ADD8E6"></a-sky> src="./s.jpg" -->
 
-		 <a-entity id="mainSky" visible="false">
+		 <a-entity id="mainSky" visible="true">
 
 			<a-sky geometry="phiLength: 22.5" rotation="-180, 0, 180"  ></a-sky>
 			<a-sky geometry="phiLength: 22.5" rotation="-180, 22.5, 180"  ></a-sky>
@@ -248,8 +248,10 @@
 
 
 			console.log("removed ski")
-			let sky = document.querySelector("a-sky")
-			sky.parentNode.removeChild(sky)
+			let sky = document.querySelector("#mainSky")
+			// sky.parentNode.removeChild(sky)
+			sky.setAttribute("visible", 'false')
+
 		}
 
 
