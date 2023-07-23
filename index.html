@@ -160,6 +160,10 @@
 			<div class="myBox" id="Icons"></div>
 			<button onclick="setMeshesVisible()">setvisible</button>
 			<button onclick="getFiles()">start</button>
+			<button onclick="texturize()">addTexture</button>
+
+		
+
 
 			<input class="input" id="localImageInput" type="file" multiple accept="image/jpeg, image/png, image/jpg" />
 			<label>Resize Image to</label>
@@ -542,7 +546,8 @@
 			// console.log(dataURL);
 			// var compressedImage = new Image();
 			//generatedMeshes[bs].setAttribute("src", dataURL);
-			Parent.children[bs].setAttribute("src", dataURL);
+			// Parent.children[bs].setAttribute("src", dataURL);
+			images.push(dataURL)
 
 			// compressedImage.onload = () => {
 			// 	compressedImage.src = dataURL;
@@ -575,8 +580,16 @@
 
 
 
+	async function texturize(){
+		for(i in images){
+			Parent.children[i].setAttribute("src", images[i])
+			await delay(500);
+		}
 
+	}
 </script>
+
+
 
 
 
