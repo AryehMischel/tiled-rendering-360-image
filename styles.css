@@ -1,0 +1,46 @@
+	/* Force scrollbars onto browser window */
+    body {
+        margin-bottom: 200%;
+    }
+
+    /* Box styles */
+    .myBox {
+        border: none;
+        padding: 5px;
+        font: 24px/36px sans-serif;
+        width: 200px;
+        height: 200px;
+        overflow: scroll;
+    }
+
+    /* Scrollbar styles */
+    ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: gold;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: yellowgreen;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #88ba1c;
+    }
+
+    .pseudo-item {
+        height: 300px;
+        width: 369px;
+        margin-right: 59px;
+        flex-shrink: 0;
+        background-color: gray;
+    }
+
+    .pseudo-item:nth-of-type(2n) {
+        background-color: lightgray;
+    }
