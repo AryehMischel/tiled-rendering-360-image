@@ -129,6 +129,7 @@ onmessage = async (evt) => {
         ctx.drawImage(img, img.width - canvas.width * i, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height)
 
         canvas.convertToBlob().then((blob) => {
+          console.log(blob.size)
           postMessage({ blob })
           ctx.clearRect(0, 0, canvas.width, canvas.height);
           
