@@ -1,2 +1,3 @@
-Web Gallery for 360 content
-embedded html component -> https://github.com/AdaRoseCannon/aframe-htmlmesh
+My initial bruteforce approach to solving the latency problems caused by high resolution 360 images on standalone. I attempting to render each portion to a seperate mesh in succession. The meshes together would form the a sphere surrounding the viewer. This approach is bad for a bunch of reasons. A. The different meshes cannot sample the other tiles so there will lots of visual artifacts, and z fighting.  B. This introduces unecessary additional geometry, objects, and textures. 
+
+What my approach would be if I still wanted to take a similar apporach. First I would create a canvas and a Three.js Canvas Texture. Have the large image be processed into smaller sub image bitmaps in a worker thread. When the bitmaps are returned to the main thread they can be drawn in the canvas. The Canvas Texture in updated, and you can even use Renderer.initTexture() to make sure the image is decoded and in gpu memory.
